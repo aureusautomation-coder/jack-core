@@ -1,0 +1,13 @@
+{
+  "name": "booking-api",
+  "version": "1.0.0",
+  "description": "Openclaw skill — connects FAQ/Jack agents to simplybook-bot-backend (port 3000)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "dependencies": {
+    "undici": "^7.22.0"
+  }
+}

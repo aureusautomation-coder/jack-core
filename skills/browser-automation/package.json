@@ -1,0 +1,22 @@
+{
+  "name": "openclaw-browser-automation",
+  "version": "1.0.0",
+  "description": "Browser automation skill for OpenClaw — persistent Playwright worker with approval gates",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/skill/start.js"
+  },
+  "dependencies": {
+    "playwright-core": "^1.50.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
