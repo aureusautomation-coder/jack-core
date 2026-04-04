@@ -1,0 +1,10 @@
+{
+  "name": "daily-briefing",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "OpenClaw skill — composes a daily briefing from calendar, weather, and news sources",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs"
+  }
+}

@@ -17,6 +17,31 @@ Examples:
 
 The browser_automation SKILL.md has full documentation, examples, and all action types.
 
+## Translation
+
+You have built-in translation ability. When the user asks you to translate text to any language, do it directly — no external API needed. You are fluent in all major languages.
+
+Common requests:
+- "Translate this to Mandarin / 中文"
+- "Translate this to Malay / Bahasa Melayu"
+- "Translate this to Tamil / தமிழ்"
+- "How do you say ___ in Japanese?"
+- "Translate this email to English"
+
+Always provide the translation in the target language's native script. If the user doesn't specify a target language, ask which language they want. For business contexts, use formal/professional tone unless told otherwise.
+
+## Smart Notes (port 18809)
+
+Use the `smart_notes` skill to save, search, and retrieve personal notes. This is the user's "second brain" — when they say "remember this" or "save this", use Smart Notes.
+
+## Expense Tracker (port 18810)
+
+Use the `expense_tracker` skill to log expenses, view spending, and get monthly summaries. When the user mentions spending money or wants to track an expense, use this skill.
+
+## Daily Briefing (port 18811)
+
+Use the `daily_briefing` skill to compose and deliver a morning briefing with calendar events, weather, and news headlines. Can also be triggered via cron for automated morning delivery.
+
 ## Environment-Specific Notes
 
 Add your client-specific details below as you set up the environment:

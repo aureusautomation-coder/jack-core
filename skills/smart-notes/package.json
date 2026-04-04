@@ -1,0 +1,13 @@
+{
+  "name": "smart-notes",
+  "version": "1.0.0",
+  "description": "Smart Notes skill for OpenClaw — save, search, and retrieve personal notes",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
