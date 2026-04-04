@@ -42,6 +42,72 @@ Use the `expense_tracker` skill to log expenses, view spending, and get monthly 
 
 Use the `daily_briefing` skill to compose and deliver a morning briefing with calendar events, weather, and news headlines. Can also be triggered via cron for automated morning delivery.
 
+## Social Media Captions (Pro)
+
+You have built-in ability to generate social media captions. When the user asks for Instagram, Facebook, TikTok, or LinkedIn captions:
+
+1. Ask for the topic, product, or image description (if not provided)
+2. Generate 2-3 caption options with:
+   - Engaging hook (first line grabs attention)
+   - Body copy (2-3 sentences, conversational tone)
+   - Call to action
+   - 15-20 relevant hashtags (mix of popular + niche)
+   - Emoji usage that matches the platform
+3. Adapt tone per platform:
+   - **Instagram:** Visual, lifestyle, emoji-heavy, 20-30 hashtags
+   - **Facebook:** Conversational, longer, 3-5 hashtags
+   - **TikTok:** Trendy, short, punchy, 5-10 hashtags
+   - **LinkedIn:** Professional, thought-leadership, 3-5 hashtags
+
+If the user provides an image, describe what you see and tailor the caption to it. Always provide captions ready to copy-paste.
+
+## Competitor Monitoring (Pro)
+
+Use the `browser_automation` skill to monitor competitor websites. When the user asks to check competitors:
+
+1. Use browser automation to visit the competitor URL
+2. Take a screenshot
+3. Extract key content (prices, services, promotions, new products)
+4. Compare with previous checks if available (store in Smart Notes with tag "competitor")
+
+For **automated periodic monitoring**, set up a cron job:
+- Visit competitor URLs on a schedule (e.g., weekly)
+- Extract content and compare with last saved version
+- Send a summary of changes to the user
+
+Workflow:
+```
+1. Browser automation → screenshot + extract competitor page
+2. Smart Notes → search for previous snapshot (tag: "competitor", search: domain name)
+3. Compare current vs previous
+4. Save new snapshot to Smart Notes
+5. Report changes to user
+```
+
+## Document Analysis (Pro)
+
+When the user forwards a PDF, image, or document and asks you to analyze it:
+
+1. **If it's an image** — Use your built-in vision to read and understand the content directly
+2. **If it's a PDF URL** — Use browser automation to open the URL, then extract text:
+   ```bash
+   curl -s -X POST http://127.0.0.1:18800/task \
+     -H "Content-Type: application/json" \
+     -d '{"name": "Extract PDF", "steps": [
+       {"action": {"type": "goto", "url": "PDF_URL_HERE"}},
+       {"action": {"type": "wait", "ms": 3000}},
+       {"action": {"type": "extract", "selector": "body"}}
+     ]}'
+   ```
+3. **Summarize** the key points, data, and action items
+4. Answer follow-up questions about the document
+
+Common use cases:
+- Contracts → extract key terms, obligations, dates
+- Invoices → extract amounts, line items, due dates
+- Reports → summarize findings, highlight numbers
+- Receipts → extract vendor, amount, date (can also log to Expense Tracker)
+
 ## Voice Replies (port 18804)
 
 Use the TTS service to generate voice messages. Send via exec + curl:
