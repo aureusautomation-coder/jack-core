@@ -1,0 +1,9 @@
+{
+  "name": "weekly-report",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Weekly business report — aggregates expenses, calendar, notes into a PDF",
+  "scripts": {
+    "start": "node server.mjs"
+  }
+}

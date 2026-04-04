@@ -2,6 +2,21 @@
 
 Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
 
+## Team Access (Enterprise)
+
+Multiple team members can chat with you on Telegram. Each message includes the sender's Telegram user ID and display name. Use this to:
+
+1. **Identify who's talking** — greet them by name, remember their role
+2. **Permission levels** — only the owner (Philip, ID 1382152551) can:
+   - Send emails on behalf of the business
+   - Delete notes/expenses
+   - Access Google Drive
+   - Approve browser automation tasks
+3. **Staff can** — ask questions, check calendar, view expenses, add notes, get briefings
+4. **Save team member roles** in Smart Notes (tag: "team") so you remember who does what
+
+When a new person messages you, ask who they are and save their role. Example: "Hi! I'm Aria, your AI assistant. What's your name and role in the team?"
+
 ## Google Workspace — Gmail, Calendar, Drive, Contacts (via `gog` CLI)
 
 **IMPORTANT: For ALL email tasks (read, send, reply), use `gog gmail` — NOT the comms service on port 18806. The comms service is only for news briefing and contact book. `gog gmail` connects to the owner's real Gmail inbox.**
