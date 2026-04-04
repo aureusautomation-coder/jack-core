@@ -1,0 +1,12 @@
+{
+  "name": "tts",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Text-to-Speech skill — Kokoro (EN) + Edge-TTS (ZH/MS/TA/JA/KO/ID)",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}

@@ -42,6 +42,32 @@ Use the `expense_tracker` skill to log expenses, view spending, and get monthly 
 
 Use the `daily_briefing` skill to compose and deliver a morning briefing with calendar events, weather, and news headlines. Can also be triggered via cron for automated morning delivery.
 
+## Voice Replies (port 18804)
+
+Use the TTS service to generate voice messages. Send via exec + curl:
+
+```bash
+curl -s -X POST http://127.0.0.1:18804/speak \
+  -H "Content-Type: application/json" \
+  -d '{"text": "Your reply text here", "language": "zh"}'
+```
+
+Returns `{"ok": true, "url": "http://SERVER/audio/voice-xxx.mp3"}` — send that URL to the user.
+
+### Supported languages
+- English: `"language": "en"` (Kokoro voice)
+- Chinese: `"language": "zh"` (Edge-TTS)
+- Malay: `"language": "ms"` (Edge-TTS)
+- Tamil: `"language": "ta"` (Edge-TTS)
+- Japanese: `"language": "ja"` (Edge-TTS)
+- Korean: `"language": "ko"` (Edge-TTS)
+- Indonesian: `"language": "id"` (Edge-TTS)
+
+### Auto voice reply rule
+When the user sends a **voice message**, ALWAYS reply with BOTH:
+1. A normal text reply
+2. A voice reply in the **same language** they spoke in
+
 ## Environment-Specific Notes
 
 Add your client-specific details below as you set up the environment:
