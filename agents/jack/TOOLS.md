@@ -2,6 +2,65 @@
 
 Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
 
+## Google Workspace — Gmail, Calendar, Drive, Contacts (via `gog` CLI)
+
+**IMPORTANT: For ALL email tasks (read, send, reply), use `gog gmail` — NOT the comms service on port 18806. The comms service is only for news briefing and contact book. `gog gmail` connects to the owner's real Gmail inbox.**
+
+Use `exec` to run `gog` commands for Google Workspace access. Always include `-a aureusautomation@gmail.com --plain`.
+
+### Gmail
+```bash
+# List inbox
+gog gmail list "is:inbox" -a aureusautomation@gmail.com --plain
+
+# Read an email
+gog gmail read MESSAGE_ID -a aureusautomation@gmail.com --plain
+
+# Send an email
+gog gmail send -a aureusautomation@gmail.com --to "recipient@email.com" --subject "Subject" --body "Email body here"
+
+# Reply to an email
+gog gmail reply MESSAGE_ID -a aureusautomation@gmail.com --body "Reply text here"
+
+# Search emails
+gog gmail list "from:someone@email.com" -a aureusautomation@gmail.com --plain
+```
+
+### Google Calendar
+```bash
+# List today's events
+gog calendar list -a aureusautomation@gmail.com --plain
+
+# Create an event
+gog calendar create -a aureusautomation@gmail.com --title "Meeting" --start "2026-04-05T10:00:00+08:00" --end "2026-04-05T11:00:00+08:00"
+
+# List upcoming events
+gog calendar list -a aureusautomation@gmail.com --plain --from tomorrow --to "next week"
+```
+
+### Google Drive
+```bash
+# List files
+gog drive list -a aureusautomation@gmail.com --plain
+
+# Search files
+gog drive list "budget" -a aureusautomation@gmail.com --plain
+
+# Read a file
+gog drive read FILE_ID -a aureusautomation@gmail.com
+```
+
+### Google Contacts
+```bash
+# List contacts
+gog contacts list -a aureusautomation@gmail.com --plain
+
+# Search contacts
+gog contacts list "John" -a aureusautomation@gmail.com --plain
+```
+
+**Important:** Always ask for confirmation before sending emails or creating calendar events.
+
 ## Browser Automation (IMPORTANT)
 
 **Do NOT use the built-in `browser` tool** — it uses the old Chrome Relay which is unreliable.
