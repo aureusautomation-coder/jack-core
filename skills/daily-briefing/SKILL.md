@@ -76,7 +76,7 @@ curl http://127.0.0.1:18811/health
 
 | Service  | URL                                   | Status      |
 |----------|---------------------------------------|-------------|
-| Calendar | `http://127.0.0.1:18803/events/today` | Optional    |
+| Calendar | `http://127.0.0.1:18803/events` | Optional    |
 | News     | `http://127.0.0.1:18806/news?limit=5` | Optional    |
 | Weather  | Placeholder (needs API key)           | Placeholder |
 

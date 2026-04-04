@@ -93,7 +93,7 @@ function parseQuery(url) {
 
 async function fetchCalendar() {
   try {
-    const data = await fetchWithTimeout('http://127.0.0.1:18803/events/today');
+    const data = await fetchWithTimeout('http://127.0.0.1:18803/events');
     return { available: true, events: data.events ?? data };
   } catch (err) {
     return { available: false, events: [], note: `Calendar service unavailable: ${err.message}` };
